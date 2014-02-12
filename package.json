@@ -1,0 +1,22 @@
+{
+  "name": "wp-to-wintersmith",
+  "version": "0.0.0",
+  "description": "Convert WP posts to Wintersmith posts",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec --compilers coffee:coffee-script/register"
+  },
+  "keywords": [
+    "wintersmith",
+    "wordpress"
+  ],
+  "author": "david@banham.id.au",
+  "license": "BSD",
+  "dependencies": {
+    "xml2js": "~0.4.1",
+    "coffee-script": "~1.7.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  }
+}
