@@ -14,9 +14,11 @@ Parser.prototype.globals = (input) ->
   authors = channel['wp:author']
   parsed_authors = []
   for author in authors
+    fullname = "#{author['wp:author_first_name']} #{author['wp:author_last_name']}"
     parsed_authors.push
       email: author['wp:author_email'][0]
-      name: "#{author['wp:author_first_name']} #{author['wp:author_last_name']}"
+      name: fullname
+      shortname: fullname.split(' ').join('').toLowerCase()
   parsed =
     authors: parsed_authors
 

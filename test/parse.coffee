@@ -97,6 +97,7 @@ describe 'parser', ->
       assert.deepEqual parsed.authors[1],
         name: 'David Banham'
         email: 'David@banham.id.au'
+        shortname: 'davidbanham'
 
   describe 'posts', ->
     it 'should parse the correct number of posts', ->
