@@ -15,7 +15,7 @@ Parser.prototype.globals = (input) ->
   channel = obj.channel[0]
   authors = channel['wp:author']
   parsed_authors = []
-  for author in authors
+  for author in authors when author['wp:author_display_name'][0] isnt 'legacy'
     fullname = "#{author['wp:author_first_name']} #{author['wp:author_last_name']}"
     parsed_authors.push
       email: author['wp:author_email'][0]

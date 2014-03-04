@@ -13,3 +13,4 @@ fs.readFile inputfile, (err, data) ->
   xml_parser.parseString data, (err, result) ->
     parsed = parser.wrapper result
     writer.write_content parsed
+    writer.write_authors parsed.globals.authors
