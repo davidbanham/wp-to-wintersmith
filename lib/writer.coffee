@@ -14,7 +14,6 @@ Writer.prototype.write_authors = (authors) ->
 Writer.prototype.write_content = (obj) ->
   template = fs.readFileSync('./lib/templates/article.mustache').toString()
   for post in obj.posts
-    console.log post
     post_folder = "./contents/articles/#{post.filename}"
     mkdirp.sync(post_folder, mode)
     post = mustache.render template, post
