@@ -1,13 +1,15 @@
 fs = require 'fs'
 xml2js = require 'xml2js'
+parser = require './lib/parser.coffee'
+writer = require './lib/writer.coffee'
 
 inputfile = process.argv[2]
 
 console.log 'reading from', inputfile
 
-parser = xml2js.Parser()
+xml_parser = xml2js.Parser()
 
 fs.readFile inputfile, (err, data) ->
-  parser.parseString data, (err, result) ->
-    fs.writeFileSync 'out', JSON.stringify result
-    console.dir result
+  xml_parser.parseString data, (err, result) ->
+    parsed = parser.wrapper result
+    writer.write_content parsed
