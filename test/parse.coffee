@@ -91,6 +91,12 @@ describe 'parser', ->
     it 'should parse the content', ->
       parsed = parser.parse post
       assert.equal parsed.content, 'The text of a blog post'
+
+    it 'should return a title without semicolons', ->
+      inner_post = JSON.parse JSON.stringify post
+      inner_post.title[0] = 'A title: with semicolons'
+      parsed = parser.parse inner_post
+      assert.equal parsed.title, 'A title with semicolons'
   describe 'globals', ->
     it 'should parse the author', ->
       parsed = parser.globals posts_obj

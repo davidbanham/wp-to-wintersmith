@@ -3,7 +3,7 @@ Parser = ->
 
 Parser.prototype.parse = (post) ->
   parsed =
-    title: post.title
+    title: post.title[0].replace(':', '')
     filename: post["wp:post_name"]
     date: new Date(post.pubDate)
     content: post['content:encoded']
