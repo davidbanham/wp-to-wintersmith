@@ -16,7 +16,8 @@
     "xml2js": "~0.4.1",
     "coffee-script": "~1.7.1",
     "mkdirp": "~0.3.5",
-    "mustache": "~0.8.1"
+    "mustache": "~0.8.1",
+    "to-markdown": "0.0.1"
   },
   "devDependencies": {
     "mocha": "~1.17.1"

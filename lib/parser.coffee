@@ -1,3 +1,5 @@
+to_markdown = require('to-markdown').toMarkdown
+
 Parser = ->
   return this
 
@@ -6,7 +8,7 @@ Parser.prototype.parse = (post) ->
     title: post.title[0].replace(':', '')
     filename: post["wp:post_name"]
     date: new Date(post.pubDate)
-    content: post['content:encoded']
+    content: to_markdown post['content:encoded'][0]
 
 Parser.prototype.globals = (input) ->
   obj = input.rss
